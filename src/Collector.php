@@ -6,8 +6,11 @@ namespace Crypto\PriceCollector;
 
 class Collector implements \JsonSerializable
 {
-    public function __construct(private array $data)
+    public $data;
+    
+    public function __construct(array $data)
     {
+        $this->data = $data;
     }
 
     public function jsonSerialize(): array
