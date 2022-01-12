@@ -18,3 +18,15 @@ ___
 ```
 docker-compose stop
 ```
+
+## Tests
+
+Run in web-service container
+```
+docker exec -it price-collector_web-service_1 /var/www/html/vendor/bin/phpunit
+```
+
+Run locally using PHP 8.1
+```
+./vendor/bin/phpunit
+```
