@@ -17,5 +17,8 @@
             "email": "dominikveres@pm.me"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require": {
+        "jaggedsoft/php-binance-api": "@dev"
+    }
 }
