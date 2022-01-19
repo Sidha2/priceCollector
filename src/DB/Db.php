@@ -1,4 +1,7 @@
 <?php
+
+namespace Crypto\PriceCollector\DB;
+
 class Db {
     
     protected $connection;
@@ -7,9 +10,9 @@ class Db {
     public $query_count = 0;
     
     public function __construct($dbhost = 'localhost', $dbuser = 'root', $dbpass = '', $dbname = '', $port='' , $charset = 'utf8') {
-        $this->connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname, $port);
+        $this->connection = new \mysqli($dbhost, $dbuser, $dbpass, $dbname, $port);
         if ($this->connection->connect_error) {
-            die('Failed to connect to MySQL - ' . $this->connection->connect_error);
+            //die('Failed to connect to MySQL - ' . $this->connection->connect_error);
 
         }
         $this->connection->set_charset($charset);
@@ -40,11 +43,11 @@ class Db {
             }
             $this->query->execute();
             if ($this->query->errno) {
-               die('Unable to process MySQL query (check your params) - ' . $this->query->error);
+               //die('Unable to process MySQL query (check your params) - ' . $this->query->error);
             }
             $this->query_count++;
         } else {
-            die('Unable to prepare statement (check your syntax) - ' . $this->connection->error);
+            //die('Unable to prepare statement (check your syntax) - ' . $this->connection->error);
         }
         return $this;
     }
