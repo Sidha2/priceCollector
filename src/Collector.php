@@ -73,7 +73,7 @@ class Collector implements \JsonSerializable
     /**
      *  Run ticker
      */
-    public function run()
+    public function run(): void
     {
         $cycle = true;
 
@@ -169,7 +169,7 @@ class Collector implements \JsonSerializable
 
     }
 
-
+    
 
     /**
      * Get the value of cycle
