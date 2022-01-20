@@ -33,7 +33,11 @@ Run locally using PHP 8.1
 
 ## Run Price Collector
 Setup Collector
+<<<<<<< HEAD
 ```php
+=======
+```
+>>>>>>> c51fee311bdec1777118ea491cd54bacdc21eb7a
 require __DIR__ . '/../vendor/autoload.php';
 include("config.php");
 
@@ -51,7 +55,11 @@ $collector->setCycle(true)->setSleep(5);                            # set up col
 ```
 
 Run as CLI
+<<<<<<< HEAD
 ```php
+=======
+```
+>>>>>>> c51fee311bdec1777118ea491cd54bacdc21eb7a
 # RUN price collector
 $collector->run();
 ```
