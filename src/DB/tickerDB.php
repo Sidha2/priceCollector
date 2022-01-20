@@ -10,18 +10,24 @@ class tickerDB extends Db{
     private $db;
     private $dbName;
 
-    public function __construct(Db $db, string $dbName)
+    public function __construct(Db $db)
     {
         $this->db = $db;
-        $this->dbName = $dbName;
     }
 
 
     /**
      *  Create Table
      */
-    public function createTable($sql): bool
+    public function createTable($tableName): bool
     {
+        $sql = "CREATE TABLE $tableName (
+            id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            pair VARCHAR(50) NOT NULL,
+            price VARCHAR(20) NOT NULL,
+            updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            )";
+            
         $query = $this->db->query($sql);
         
         if ($query->affectedRows() == 0) return true;     # tab created successful, -1 = false
@@ -93,4 +99,16 @@ class tickerDB extends Db{
         return $this->db->connection->connect_error;
     }
 
+
+    /**
+     * Set the value of dbName
+     *
+     * @return  self
+     */ 
+    public function setDbName($dbName)
+    {
+        $this->dbName = $dbName;
+
+        return $this;
+    }
 }
