@@ -15,6 +15,10 @@
         {
             "name": "Dominik Veres",
             "email": "dominikveres@pm.me"
+        },
+        {
+            "name": "Jaroslav Bedri",
+            "email": "Sidha2@gmail.com"
         }
     ],
     "minimum-stability": "stable",
